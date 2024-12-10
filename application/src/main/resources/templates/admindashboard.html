@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Library Management System</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    
+    <!-- CSS File for Dashboard -->
+    <link rel="stylesheet" href="/css/admindashboard.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1 class="logo">BookNest Admin</h1>
+            <nav>
+                <ul>
+                    <li><a href="/admin/users" class="nav-link">Manage Users</a></li>
+                    <li><a href="/admin/books" class="nav-link">Manage Books</a></li>
+                    <li><a href="/index" class="cta-btn">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Admin Dashboard Section -->
+    <section class="admin-dashboard">
+        <div class="container">
+            <h2>Welcome, Admin!</h2>
+            <p>Use the dashboard below to manage users, view borrowed books, and manage the book inventory.</p>
+
+            <div class="admin-options">
+                <div class="option">
+                    <h3>Manage Users</h3>
+                    <p>View, track borrowed books, and update book return status for users.</p>
+                    <a href="/admin/users" class="btn">Manage Users</a>
+                </div>
+
+                <div class="option">
+                    <h3>Manage Books</h3>
+                    <p>Add, edit, or delete books in the library inventory.</p>
+                    <a href="/admin/books" class="btn">Manage Books</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 BookNest. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

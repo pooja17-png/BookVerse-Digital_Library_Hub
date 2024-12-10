@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrowed Books</title>
+    <link rel="stylesheet" href="/css/admindashboard.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1>Borrowed Books</h1>
+        <nav>
+            <ul>
+                <li><a href="/admindashboard" class="nav-link">Admin Dashboard</a></li>
+                <li><a href="/admin/users" class="nav-link">Manage Users</a></li>
+                <li><a th:href="@{/admin/login}" class="nav-link">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="container admin-dashboard">
+    <h2>Borrowed Books</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Borrowed Date</th>
+                <th>Due Date</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="borrowedBook : ${borrowedBooks}">
+                <td th:text="${borrowedBook.book.title}">Title</td>
+                <td th:text="${borrowedBook.borrowDate}">Borrowed Date</td>
+                <td th:text="${borrowedBook.dueDate}">Due Date</td>
+               <td th:text="${borrowedBook.returned ? 'Returned' : 'Not Returned'}"></td>
+                <td>
+                    <form th:action="@{'/admin/borrowed-books/' + ${borrowedBook.borrowedBookId} + '/update-status'}" method="post">
+                        <select name="status">
+                            <option th:value="Borrowed" th:selected="${borrowedBook.returned == 'Borrowed'}">Borrowed</option>
+                            <option th:value="Returned" th:selected="${borrowedBook.returned == 'Returned'}">Returned</option>
+                        </select>
+                        <button type="submit" class="btn">Update</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2024 BookNest. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>

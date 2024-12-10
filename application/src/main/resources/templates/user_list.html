@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Users - Admin</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    
+    <!-- CSS File for Dashboard -->
+    <link rel="stylesheet" href="/css/admindashboard.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1>Manage Users</h1>
+        <nav>
+            <ul>
+                <li><a href="/admindashboard" class="nav-link">Admin Dashboard</a></li>
+                <li><a href="/admin/books" class="nav-link">Manage Books</a></li>
+                <li><a th:href="@{/admin/login}" class="nav-link">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="container admin-dashboard">
+    <h2>User List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="user : ${users}">
+                <td th:text="${user.username}">Username</td>
+                <td th:text="${user.email}">Email</td>
+                <td>
+                    <a th:href="@{'/admin/users/' + ${user.userId} + '/borrowed-books'}" class="btn">View Borrowed Books</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2024 BookNest. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,222 @@
+/* Google Font Imports */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f7fa;
+    margin: 0;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background-color: #243c5a;
+    color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 0;
+}
+
+.highlight {
+    color: #ff6f61;
+}
+
+nav ul {
+    text-align: center;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.nav-link {
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ff6f61;
+}
+
+/* Admin Dashboard Styles */
+.admin-dashboard {
+    padding: 50px 0;
+    background-color: #ffffff;
+    margin: 30px auto;
+    border-radius: 10px;
+    max-width: 1200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-dashboard h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    color: #243c5a;
+    text-align: center;
+}
+
+.admin-dashboard p {
+    font-size: 1.2rem;
+    color: #666;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Action Button Styles */
+.cta-btn {
+    background-color: #ff6f61;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    box-shadow: 0 8px 16px rgba(255, 111, 97, 0.3);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin: 20px auto;
+}
+
+.cta-btn:hover {
+    background-color: #e0554e;
+    box-shadow: 0 12px 20px rgba(255, 111, 97, 0.4);
+}
+
+/* Admin Options */
+.admin-options {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 0;
+    flex-wrap: wrap;
+}
+
+.admin-options .option {
+    background-color: #f5f7fa;
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-options .option:hover {
+    transform: translateY(-10px);
+}
+
+.admin-options .option h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #243c5a;
+}
+
+.admin-options .option p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.admin-options .option .btn {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.admin-options .option .btn:hover {
+    background-color: #e0554e;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 40px 0;
+}
+
+thead {
+    background-color: #243c5a;
+    color: white;
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    text-align: center;
+}
+
+table td {
+    text-align: center;
+}
+
+table tr:hover {
+    background-color: #f9f9f9;
+}
+
+.borrow-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.borrow-btn:hover {
+    background-color: #218838;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #243c5a;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .admin-options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .admin-options .option {
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 400px;
+    }
+}

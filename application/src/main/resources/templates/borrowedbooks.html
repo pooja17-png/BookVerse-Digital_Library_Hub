@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrowed Books</title>
+    <link rel="stylesheet" href="/css/userhome.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1 class="logo">Borrowed Books</h1>
+        <nav>
+            <ul>
+                <li><a href="/user/dashboard" class="nav-link">Dashboard</a></li>
+                <li><a href="/user/logout" class="nav-link">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="container">
+    <h2>Borrowed Books</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Borrow Date</th>
+                <th>Due Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="borrowedBook : ${borrowedBooks}">
+                <td th:text="${borrowedBook.book.title}"></td>
+                <td th:text="${borrowedBook.book.author}"></td>
+                <td th:text="${borrowedBook.borrowDate}"></td>
+                <td th:text="${borrowedBook.dueDate}"></td>
+                <td th:text="${borrowedBook.returned ? 'Returned' : 'Not Returned'}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<footer>
+    <p>&copy; 2024 BookNest. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
